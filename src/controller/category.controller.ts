@@ -4,19 +4,22 @@ import { checkInValidStringField, checkValidMongoseId, sendResponse, throwError 
 import categoryModel from "../models/category.modal";
 import { Types } from "mongoose";
 import logger from "../utility/wingstonLogger";
+import handleUploadService from "../services/multerService";
 
 const addCategory = async (request: Request<{}, {}, ICategoryModal>, response: Response) => {
     try {
-        console.log("api hits")
-        const { name, image, isBlocked } = request.body;
-        console.log("name is ",name)
+
+        const { name, isBlocked } = request.body;
         if (!checkInValidStringField(name)) {
             return sendResponse(response, 400, "Name is required field", null)
         }
 
-        // if (checkInValidStringField(image)) {
-        //     return sendResponse(response, 400, "Image is required field", null)
-        // }
+
+        if (!request.file) {
+            return sendResponse(response, 400, "Image is not present", null)
+        }
+
+        const image = handleUploadService(request.file)
 
         const data = await categoryModel.create({ name, image, isBlocked });
         if (data) {

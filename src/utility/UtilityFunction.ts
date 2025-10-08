@@ -28,8 +28,7 @@ const checkInValidNumberField = (data: any): boolean => {
 };
 
 
-const checkValidMongoseId = (_id:Types.ObjectId)=>{
-    console.log("id",_id)
+const checkValidMongoseId = (_id:Types.ObjectId|string)=>{
     if (!_id || !mongoose.Types.ObjectId.isValid(_id)) {
        return false;
     }

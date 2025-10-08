@@ -6,28 +6,30 @@ import { LoginRequest } from "../interface/LoginRequest";
 import IUser from "../interface/UserInterface"
 import UserModel from "../models/user";
 import logger from "../utility/wingstonLogger";
+import { MailerSend, EmailParams, Sender, Recipient } from "mailersend";
 
 
 const login = async (reqest: Request<{}, {}, LoginRequest>, respones: Response) => {
     try {
-        let { phoneNo, password } = reqest.body;
+        let { email, password } = reqest.body;
         logger.info("login api hits")
 
-        if (checkInValidNumberField(phoneNo) && checkInValidNumberField(phoneNo)) {
-            return sendResponse(respones, 400, "Phone no is required and should be proper", null);
-        }
+        // if (checkInValidNumberField(phoneNo) && checkInValidNumberField(phoneNo)) {
+        //     return sendResponse(respones, 400, "Phone no is required and should be proper", null);
+        // }
 
         if (!checkInValidStringField(password)) {
             return sendResponse(respones, 400, "Password is required and should be proper", null);
         }
-
-        const user = await UserModel.findOne({ phoneNo });
+        const user = await UserModel.findOne({ email });
         if (user) {
             const isPasswordMatch = await user.comparePassword(password)
             if (isPasswordMatch) {
                 const userWithoutPassword: IUser = user.toObject();
                 delete (userWithoutPassword as any).password;
-                return sendResponse(respones, 200, "Login sucessfully", user);
+                const authToken = await generateToken(userWithoutPassword);
+
+                return sendResponse(respones, 200, "Login sucessfully", { user, authToken });
             } else {
                 return sendResponse(respones, 200, "Password incorrect", null);
             }
@@ -35,7 +37,7 @@ const login = async (reqest: Request<{}, {}, LoginRequest>, respones: Response) 
             return sendResponse(respones, 200, "User not found", null)
         }
     } catch (error) {
-        logger.error("Error",error)
+        logger.error("Error", error)
         throwError(respones, 500, "Internal Server Error", null)
     }
 }
@@ -43,8 +45,7 @@ const login = async (reqest: Request<{}, {}, LoginRequest>, respones: Response) 
 const Resgister = async (request: Request<{}, {}, IUser>, respones: Response) => {
     try {
 
-        const { name, email,phoneNo, password  } = request.body;
-        console.log("body is",request.body)
+        const { name, email, phoneNo, password } = request.body;
 
         if (!checkInValidStringField(name)) {
             return sendResponse(respones, 400, "Name is required", null);
@@ -58,27 +59,21 @@ const Resgister = async (request: Request<{}, {}, IUser>, respones: Response) =>
             return sendResponse(respones, 400, "Password is required", null);
         }
 
-        if(!checkInValidEmail(email)){
+        if (!checkInValidEmail(email)) {
             return sendResponse(respones, 400, "Email is required and should be proper", null);
         }
 
-
-        console.log("exist user starts")
-        const existUser = await UserModel.find({ 
+        const existUser = await UserModel.find({
             $or: [{ phoneNo }, { email }]
-         });
-            console.log("exist user found",existUser)
-            console.log("exist user length",existUser.length)
+        });
         if (existUser && existUser.length > 0) {
-            console.log("enters")
             return sendResponse(respones, 400, "Already registered with the provided phone number or email", null);
 
-            return sendResponse(response, 400, "Already registered with the provided phone number or email",null);
+            return sendResponse(response, 400, "Already registered with the provided phone number or email", null);
         }
-        console.log("how but comes")
 
 
-        const user = await UserModel.create({ name, phoneNo, password ,email});
+        const user = await UserModel.create({ name, phoneNo, password, email });
 
         if (user) {
             const accessToken = generateToken(user.toObject());
@@ -87,9 +82,37 @@ const Resgister = async (request: Request<{}, {}, IUser>, respones: Response) =>
 
         return sendResponse(respones, 200, "User not created try again later", null)
     } catch (error) {
-        logger.error("error",error)
+        logger.error("error", error)
         throwError(respones, 500, "Internal Server Error", null)
     }
 }
 
-export { login, Resgister }
+const sendMail = async (name: string, email: string): Promise<boolean> => {
+    try {
+
+        const mailerSend = new MailerSend({
+            apiKey: process.env.API_KEY!!,
+        });
+
+        const sentFrom = new Sender("quickbite@gmail.com", "Quick Bite");
+
+        const recipients = [
+            new Recipient(email, name)
+        ];
+
+        const emailParams = new EmailParams()
+            .setFrom(sentFrom)
+            .setTo(recipients)
+            .setReplyTo(sentFrom)
+            .setSubject("OTP Verification at Quick bite")
+            .setHtml("Greetings from the team, you got this message through MailerSend.")
+            .setText("Greetings from the team, you got this message through MailerSend.");
+
+        await mailerSend.email.send(emailParams);
+        return true;
+    } catch (error) {
+        logger.error("Error", error)
+        return false
+    }
+}
+export { login, Resgister, sendMail }

@@ -8,38 +8,40 @@ import { Types } from "mongoose";
 const addAddress = async (request: Request<{}, {}, IAddressModal>, response: Response) => {
     try {
 
-        const { street, city, state, country, userId } = request.body;
+        const { address, name, city, state, number } = request.body;
+        const userId = request.user._id || null;
+        if (!checkInValidStringField(name)) {
+            return sendResponse(response, 400, "Name is required field", null)
+        }
 
-        if (checkInValidStringField(street)) {
+        if (!checkInValidStringField(address)) {
             return sendResponse(response, 400, "Street is required field", null)
         }
 
-        if (checkInValidStringField(city)) {
+        if (!checkInValidStringField(city)) {
             return sendResponse(response, 400, "city is required field", null)
         }
 
-        if (checkInValidStringField(state)) {
+        if (!checkInValidStringField(state)) {
             return sendResponse(response, 400, "state is required field", null)
         }
 
-        if (checkInValidStringField(country)) {
+        if (!checkInValidStringField(number)) {
             return sendResponse(response, 400, "country is required field", null)
         }
 
-        if (checkValidMongoseId(userId)) {
-            return sendResponse(response, 400, "UserId is required field",null)
+
+        if (!checkValidMongoseId(userId)) {
+            return sendResponse(response, 400, "UserId is required field", null)
         }
 
-        const address = await addressModal.create({ state, street, city, country, userId });
-        if (address) {
-            
-        }
+        const addressData = await addressModal.create({ state, address, city, name, number, userId });
 
 
-        sendResponse(response, 400, "userId is required field", null)
+        sendResponse(response, 201, "address added successfully", addressData)
 
     } catch (error) {
-         logger.error("error at adding address is", error)
+        logger.error("error at adding address is", error)
         throwError(response, 500, "Internal server error", null);
     }
 }
@@ -47,16 +49,15 @@ const addAddress = async (request: Request<{}, {}, IAddressModal>, response: Res
 
 const getAddresses = async (request: Request<{}, {}, IAddressModal>, response: Response) => {
     try {
-        console.log("User",request)
-        const address = await addressModal.find({ isBlocked: true ,userId:request.user._id});
+        const address = await addressModal.find({ isBlocked: true, userId: request.user._id });
 
         if (address && address.length > 0) {
             return sendResponse(response, 200, "address found", address);
         }
 
-        return sendResponse(response, 200, "No category found", null)
+        return sendResponse(response, 204, "No category found", null)
     } catch (error) {
-          logger.error("error at getting address is", error)
+        logger.error("error at getting address is", error)
         throwError(response, 500, "Internal server error", null);
     }
 }
@@ -77,10 +78,10 @@ const deleteAddress = async (request: Request<{ id: Types.ObjectId }, {}, IAddre
             address.isActive = false;
             await address.save();
 
-            return sendResponse(response, 201, "Address deleted successfully", true)
+            return sendResponse(response, 204, "Address deleted successfully", true)
         }
 
-        return sendResponse(response, 400, "Error at Address deleted", false)
+        return sendResponse(response, 400, "Address not found", false)
 
     } catch (error) {
         logger.error("error at deleting address is", error)
@@ -88,4 +89,4 @@ const deleteAddress = async (request: Request<{ id: Types.ObjectId }, {}, IAddre
     }
 }
 
-export {addAddress, getAddresses, deleteAddress}
+export { addAddress, getAddresses, deleteAddress }

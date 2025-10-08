@@ -2,6 +2,7 @@ export default interface IRestaurant extends Document {
   name: string;
   address: string;
   phone_number: string;
+  image: string;
   opening_hours: {
     monday: string;
     tuesday: string;
@@ -12,6 +13,6 @@ export default interface IRestaurant extends Document {
     sunday: string;
   };
   created_at: Date;
-  img:string;
-  isActive:boolean
+  img: string;
+  isActive: boolean
 }

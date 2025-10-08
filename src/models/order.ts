@@ -5,10 +5,9 @@ import { OrderStatusEnum } from "../enum/OrderStatusEnum";
 
 const orderItemSchema: Schema = new mongoose.Schema<IOrderItem>(
     {
-        restaurantName: { type: String, required: true },
-        menuId: {
+        menu: {
             type: Schema.Types.ObjectId,
-            ref: "Menu",
+            ref: "MenuItem",
             required: true,
         },
         price: { type: Number, required: true },
@@ -18,7 +17,7 @@ const orderItemSchema: Schema = new mongoose.Schema<IOrderItem>(
 
 const orderSchema: Schema = new mongoose.Schema<IOrder>(
     {
-        orderId: { type: Schema.Types.ObjectId, required: true },
+   
         userId: { type: Schema.Types.ObjectId, required: true },
         totalPrice: { type: Number, required: true },
         items: [orderItemSchema],
@@ -32,7 +31,19 @@ const orderSchema: Schema = new mongoose.Schema<IOrder>(
             type: String,
             enum: Object.values(PaymentTypeEnum),
             required: true,
-            default: "cash"
+        },
+        platformFee:{
+            type:Number,
+            requried:true
+        },
+        address:{
+            type:mongoose.Schema.ObjectId,
+            required:true,
+            ref:"Address"
+        },
+        deliveryCharge:{
+            type:Number,
+            requried:true
         }
 
     },

@@ -4,8 +4,9 @@ import { addOrder, getOrderById, getOrders } from "../controller/order.controlle
 const orderRouter = express.Router();
 
 
-router.get("/getOrderById/:id",getOrderById)
-router.get("/getOrders",getOrders)
-router.post("/addOrders",addOrder)
+orderRouter.get("/getOrderById/:id", getOrderById)
+orderRouter.get("/getOrders", getOrders)
+orderRouter.post("/placeOrder", addOrder)
+
 
 export default orderRouter;

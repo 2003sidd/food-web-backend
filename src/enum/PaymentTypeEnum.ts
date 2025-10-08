@@ -1,4 +1,5 @@
 export enum PaymentTypeEnum {
-    Cash = 'Cash',
-    Online = 'Online',
+    COD = 'COD',
+    UPI = 'UPI',
+    CARD="card"
 }

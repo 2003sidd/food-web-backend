@@ -1,11 +1,12 @@
 import express from "express";
-import { addToCart, deleteCart, deleteFromCart, getCart } from "../controller/cartController";
+import { CartQuantityUpsert, deleteCart, deleteFromCart, getCart, getCheckout } from "../controller/cartController";
 
 const cartRoute = express.Router()
 
 cartRoute.get("/getCartItems",getCart)
-cartRoute.get("/addCartItem",addToCart)
-cartRoute.delete("/deleteCartItem",deleteFromCart)
+cartRoute.get("/checkout",getCheckout)
+cartRoute.post("/updateCartItem",CartQuantityUpsert)
+cartRoute.delete("/deleteCartItem/:id",deleteFromCart)
 cartRoute.delete("/deleteCart",deleteCart)
 
 export default cartRoute;

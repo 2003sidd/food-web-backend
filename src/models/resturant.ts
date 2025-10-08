@@ -7,6 +7,7 @@ const restaurantSchema: Schema = new mongoose.Schema<IRestaurant>(
         name: { type: String, required: true },
         address: { type: String, required: true },
         phone_number: { type: String, required: true },
+        image: { type: String, required: false },
         // opening_hours: {
         //     monday: { type: String, required: true },
         //     tuesday: { type: String, required: true },

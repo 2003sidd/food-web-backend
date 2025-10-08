@@ -2,7 +2,15 @@ import mongoose, { mongo } from "mongoose";
 import { IAddressModal } from "../interface/AddressModal";
 
 const addressSchema = new mongoose.Schema<IAddressModal>({
-    street: {
+    name: {
+        type: String,
+        required: true
+    },
+    number: {
+        required: true,
+        type: String
+    },
+    address: {
         required: true,
         type: String
     },
@@ -14,10 +22,7 @@ const addressSchema = new mongoose.Schema<IAddressModal>({
         required: true,
         type: String,
     },
-    country: {
-        required: true,
-        type: String,
-    },
+   
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
@@ -26,5 +31,5 @@ const addressSchema = new mongoose.Schema<IAddressModal>({
     isActive: { type: Boolean, default: true }
 });
 
-const addressModal = mongoose.model<IAddressModal>("Address", addressSchema);
+const addressModal = mongoose.model("Address", addressSchema);
 export default addressModal;

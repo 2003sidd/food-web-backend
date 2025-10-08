@@ -37,3 +37,303 @@
 2025-08-07T17:27:44.073Z [31merror[39m: error Cannot read properties of undefined (reading 'get')
 2025-08-07T17:28:46.462Z [31merror[39m: error Cannot read properties of undefined (reading 'get')
 2025-08-07T17:37:12.657Z [31merror[39m: error Cannot read properties of undefined (reading 'get')
+2025-08-07T18:05:50.477Z [32minfo[39m: login api hits
+2025-08-07T18:09:37.065Z [32minfo[39m: login api hits
+2025-08-07T18:09:37.103Z [31merror[39m: Error user.comparePassword is not a function
+2025-08-07T18:19:02.824Z [32minfo[39m: login api hits
+2025-08-07T18:20:07.711Z [32minfo[39m: login api hits
+2025-08-07T18:20:52.626Z [32minfo[39m: login api hits
+2025-08-07T18:21:22.012Z [32minfo[39m: login api hits
+2025-08-07T18:22:54.469Z [32minfo[39m: login api hits
+2025-08-07T18:24:01.267Z [32minfo[39m: login api hits
+2025-08-08T08:24:41.349Z [32minfo[39m: login api hits
+2025-08-08T08:26:12.200Z [32minfo[39m: login api hits
+2025-08-08T08:26:49.404Z [32minfo[39m: login api hits
+2025-08-08T08:27:09.859Z [32minfo[39m: login api hits
+2025-08-08T08:30:28.437Z [32minfo[39m: login api hits
+2025-08-08T08:31:05.751Z [32minfo[39m: login api hits
+2025-08-08T08:35:02.231Z [32minfo[39m: login api hits
+2025-08-08T08:54:56.463Z [32minfo[39m: login api hits
+2025-08-08T08:56:41.741Z [31merror[39m: error at authorize user is  secret or public key must be provided
+2025-08-08T08:56:41.746Z [31merror[39m: error at authorize user is  secret or public key must be provided
+2025-08-08T08:59:11.016Z [32minfo[39m: login api hits
+2025-08-08T08:59:13.684Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-08T08:59:13.691Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-08T08:59:46.422Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-08T08:59:46.427Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-08T09:00:06.865Z [32minfo[39m: login api hits
+2025-08-08T09:01:28.025Z [32minfo[39m: login api hits
+2025-08-10T09:55:57.397Z [31merror[39m: Error at adding items in cart Cannot read properties of undefined (reading '_id')
+2025-08-14T16:45:59.299Z [31merror[39m: Error at adding items in cart Cannot read properties of undefined (reading '_id')
+2025-08-14T16:47:25.600Z [31merror[39m: Error at adding items in cart Cannot read properties of undefined (reading '_id')
+2025-08-14T16:48:28.669Z [31merror[39m: Error at adding items in cart Cart validation failed: userId: Path `userId` is required.
+2025-08-17T09:51:36.761Z [31merror[39m: error at authorize user is  jwt expired
+2025-08-17T09:51:36.765Z [31merror[39m: error at authorize user is  jwt expired
+2025-08-17T09:51:48.806Z [31merror[39m: error at authorize user is  jwt expired
+2025-08-17T09:51:48.809Z [31merror[39m: error at authorize user is  jwt expired
+2025-08-17T09:52:10.298Z [32minfo[39m: login api hits
+2025-08-20T11:51:15.240Z [31merror[39m: error at getting items from cart Parameter "filter" to find() must be an object, got "6894eef4f2f3d8b33c675fea" (type string)
+2025-08-20T11:51:15.243Z [31merror[39m: error at getting items from cart Parameter "filter" to find() must be an object, got "6894eef4f2f3d8b33c675fea" (type string)
+2025-08-20T11:52:41.497Z [31merror[39m: error at getting items from cart addressData is not defined
+2025-08-20T11:52:41.500Z [31merror[39m: error at getting items from cart addressData is not defined
+2025-08-20T11:52:43.677Z [31merror[39m: error at getting items from cart addressData is not defined
+2025-08-20T11:52:43.683Z [31merror[39m: error at getting items from cart addressData is not defined
+2025-08-20T11:52:44.096Z [31merror[39m: error at getting items from cart addressData is not defined
+2025-08-20T11:52:44.097Z [31merror[39m: error at getting items from cart addressData is not defined
+2025-08-20T11:54:40.520Z [31merror[39m: error at getting items from cart Parameter "filter" to find() must be an object, got "6894eef4f2f3d8b33c675fea" (type string)
+2025-08-20T11:54:40.525Z [31merror[39m: error at getting items from cart Parameter "filter" to find() must be an object, got "6894eef4f2f3d8b33c675fea" (type string)
+2025-08-20T11:54:42.438Z [31merror[39m: error at getting items from cart Parameter "filter" to find() must be an object, got "6894eef4f2f3d8b33c675fea" (type string)
+2025-08-20T11:54:42.440Z [31merror[39m: error at getting items from cart Parameter "filter" to find() must be an object, got "6894eef4f2f3d8b33c675fea" (type string)
+2025-08-21T08:35:26.376Z [31merror[39m: error at adding address is Cannot read properties of undefined (reading '_id')
+2025-08-21T08:38:51.660Z [31merror[39m: error at adding address is Address validation failed: country: Path `country` is required.
+2025-08-21T09:36:03.597Z [31merror[39m: Error at adding order Cannot populate path `menuId` because it is not in your schema. Set the `strictPopulate` option to false to override.
+2025-08-21T09:37:02.865Z [31merror[39m: Error at adding items in cart Cart validation failed: menu: Path `menu` is required.
+2025-08-21T09:37:04.786Z [31merror[39m: Error at adding items in cart Cart validation failed: menu: Path `menu` is required.
+2025-08-21T09:37:08.071Z [31merror[39m: Error at adding items in cart Cart validation failed: menu: Path `menu` is required.
+2025-08-21T09:40:12.987Z [31merror[39m: Error at adding items in cart Cart validation failed: menu: Path `menu` is required.
+2025-08-21T09:40:45.370Z [33mwarn[39m: MenuItem for cart 68a327b9f783e0c55a03270c is missing price.
+2025-08-21T09:40:45.371Z [33mwarn[39m: MenuItem for cart 68a3247ff783e0c55a0326f3 is missing price.
+2025-08-21T09:40:45.376Z [33mwarn[39m: MenuItem for cart 68a327b9f783e0c55a03270c is missing price.
+2025-08-21T09:40:45.379Z [33mwarn[39m: MenuItem for cart 68a3247ff783e0c55a0326f3 is missing price.
+2025-08-21T09:40:55.924Z [33mwarn[39m: MenuItem for cart 68a327b9f783e0c55a03270c is missing price.
+2025-08-21T09:40:55.925Z [33mwarn[39m: MenuItem for cart 68a3247ff783e0c55a0326f3 is missing price.
+2025-08-21T09:42:54.342Z [33mwarn[39m: MenuItem for cart 68a327b9f783e0c55a03270c is missing price.
+2025-08-21T09:42:54.344Z [33mwarn[39m: MenuItem for cart 68a3247ff783e0c55a0326f3 is missing price.
+2025-08-21T09:42:54.347Z [33mwarn[39m: MenuItem for cart 68a327b9f783e0c55a03270c is missing price.
+2025-08-21T09:42:54.348Z [33mwarn[39m: MenuItem for cart 68a3247ff783e0c55a0326f3 is missing price.
+2025-08-21T09:43:33.990Z [33mwarn[39m: MenuItem for cart 68a327b9f783e0c55a03270c is missing price.
+2025-08-21T09:43:33.993Z [33mwarn[39m: MenuItem for cart 68a3247ff783e0c55a0326f3 is missing price.
+2025-08-21T09:43:33.999Z [33mwarn[39m: MenuItem for cart 68a327b9f783e0c55a03270c is missing price.
+2025-08-21T09:43:34.000Z [33mwarn[39m: MenuItem for cart 68a3247ff783e0c55a0326f3 is missing price.
+2025-08-21T09:44:29.957Z [33mwarn[39m: MenuItem for cart 68a327b9f783e0c55a03270c is missing price.
+2025-08-21T09:44:29.957Z [33mwarn[39m: MenuItem for cart 68a3247ff783e0c55a0326f3 is missing price.
+2025-08-21T09:52:05.992Z [31merror[39m: Error at adding order Order validation failed: items.0.menuId: Path `menuId` is required.
+2025-08-21T09:53:16.344Z [31merror[39m: Error at adding order Order validation failed: items.0._id: Path `_id` is required.
+2025-08-21T09:57:30.577Z [31merror[39m: Error at adding order Order validation failed: items.0._id: Path `_id` is required.
+2025-08-21T09:58:02.565Z [31merror[39m: Error at adding order Order validation failed: items.0._id: Path `_id` is required.
+2025-08-21T11:16:50.691Z [31merror[39m: Error at getting orders  Cannot populate path `menu` because it is not in your schema. Set the `strictPopulate` option to false to override.
+2025-08-21T11:16:50.702Z [31merror[39m: Error at getting orders  Cannot populate path `menu` because it is not in your schema. Set the `strictPopulate` option to false to override.
+2025-08-21T11:17:53.692Z [31merror[39m: Error at getting orders  Schema hasn't been registered for model "Menu".
+Use mongoose.model(name, schema)
+2025-08-21T11:17:53.704Z [31merror[39m: Error at getting orders  Schema hasn't been registered for model "Menu".
+Use mongoose.model(name, schema)
+2025-08-21T11:18:38.052Z [31merror[39m: Error at getting orders  Schema hasn't been registered for model "Menu".
+Use mongoose.model(name, schema)
+2025-08-21T11:18:38.068Z [31merror[39m: Error at getting orders  Schema hasn't been registered for model "Menu".
+Use mongoose.model(name, schema)
+2025-08-21T16:24:00.092Z [32minfo[39m: login api hits
+2025-08-21T16:24:08.071Z [32minfo[39m: login api hits
+2025-08-22T14:19:13.514Z [31merror[39m: Error at adding items in cart Cart validation failed: menu: Path `menu` is required.
+2025-08-22T14:19:18.360Z [31merror[39m: Error at adding items in cart Cart validation failed: menu: Path `menu` is required.
+2025-08-22T17:48:08.170Z [32minfo[39m: login api hits
+2025-08-22T17:48:15.872Z [32minfo[39m: login api hits
+2025-08-22T17:48:28.934Z [32minfo[39m: login api hits
+2025-08-23T11:31:33.894Z [31merror[39m: Error at getting order by id  Cannot populate path `items/menu` because it is not in your schema. Set the `strictPopulate` option to false to override.
+2025-08-23T11:31:33.902Z [31merror[39m: Error at getting order by id  Cannot populate path `items/menu` because it is not in your schema. Set the `strictPopulate` option to false to override.
+2025-08-23T16:31:34.061Z [31merror[39m: Error at changing cart items is  Wishlist validation failed: _id: Path `_id` is required.
+2025-08-23T16:32:07.121Z [31merror[39m: Error at changing cart items is  document must have an _id before saving
+2025-08-25T17:01:19.362Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-25T17:01:19.369Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-25T17:01:19.372Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-25T17:01:19.375Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-25T17:05:17.982Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-25T17:05:17.984Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-25T17:05:17.987Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-25T17:05:17.990Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-25T17:05:18.424Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-25T17:05:18.427Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-25T17:05:18.429Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-25T17:05:18.432Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T11:43:16.361Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T11:43:16.379Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T11:43:16.382Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T11:43:16.386Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T11:52:01.339Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T11:52:01.346Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T11:52:26.303Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T11:52:26.305Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T11:52:26.309Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T11:52:26.311Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T11:52:45.162Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T11:52:45.168Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T11:52:54.692Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T11:52:54.697Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T12:26:29.623Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T12:26:29.639Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T13:36:30.245Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T13:36:30.248Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T13:37:56.194Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T13:37:56.198Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T13:38:09.334Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T13:38:09.336Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T13:39:13.482Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T13:39:13.485Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T13:42:23.922Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T13:42:23.924Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T13:42:23.926Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-26T13:42:23.928Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-28T07:13:29.649Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-28T07:13:29.656Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-28T07:13:29.658Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-28T07:13:29.659Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-28T07:13:33.204Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-28T07:13:33.209Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-28T07:13:33.211Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-28T07:13:33.214Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-28T07:13:42.929Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-28T07:13:42.936Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-28T07:13:44.111Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-28T07:13:44.115Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-28T07:14:40.786Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-28T07:14:40.788Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-28T07:43:11.657Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-28T07:43:11.666Z [31merror[39m: error at authorize user is  invalid signature
+2025-08-28T07:43:45.299Z [32minfo[39m: login api hits
+2025-08-28T07:45:27.913Z [32minfo[39m: cart items
+2025-08-28T07:45:27.924Z [32minfo[39m: cart items
+2025-08-28T07:45:27.931Z [32minfo[39m: wishlist items
+2025-08-28T07:45:27.940Z [32minfo[39m: wishlist items
+2025-08-30T09:47:17.899Z [31merror[39m: error at creating resturant is Cannot destructure property 'name' of 'req.body' as it is undefined.
+2025-08-30T09:48:13.315Z [31merror[39m: error at creating resturant is Cannot destructure property 'name' of 'req.body' as it is undefined.
+2025-08-30T10:21:26.037Z [31merror[39m: error at creating resturant is Cannot read properties of undefined (reading 'originalname')
+2025-08-30T10:25:57.960Z [31merror[39m: error at creating resturant is Cannot read properties of undefined (reading 'originalname')
+2025-08-30T10:55:13.227Z [31merror[39m: error at authorize user is  invalid token
+2025-08-30T10:56:12.655Z [31merror[39m: error at authorize user is  invalid token
+2025-08-30T10:56:25.949Z [31merror[39m: error at creating resturant is Restaurant validation failed: image: Cast to string failed for value "{
+  message: 'File uploaded successfully!',
+  originalName: 'buggesImage.jpg',
+  filename: '1756551385920-146636793-buggesImage.jpg',
+  path: 'D:\\redmi\\web\\foodWebApp\\food-web-backend\\uploads\\1756551385920-146636793-buggesImage.jpg',
+  size: 393069
+}" (type Object) at path "image"
+2025-09-10T07:32:57.330Z [31merror[39m: error at authorize user is  jwt expired
+2025-09-10T07:32:57.350Z [31merror[39m: error at authorize user is  jwt expired
+2025-09-10T07:32:57.361Z [31merror[39m: error at authorize user is  jwt expired
+2025-09-10T07:32:57.374Z [31merror[39m: error at authorize user is  jwt expired
+2025-09-10T07:33:02.349Z [31merror[39m: error at authorize user is  jwt expired
+2025-09-10T07:33:02.368Z [31merror[39m: error at authorize user is  jwt expired
+2025-09-10T07:33:02.385Z [31merror[39m: error at authorize user is  jwt expired
+2025-09-10T07:33:02.404Z [31merror[39m: error at authorize user is  jwt expired
+2025-09-10T07:33:23.126Z [32minfo[39m: login api hits
+2025-09-15T13:23:40.183Z [31merror[39m: Error
+2025-09-15T13:23:40.188Z [31merror[39m: Error
+2025-09-15T13:41:00.782Z [31merror[39m: Error
+2025-09-16T07:27:28.904Z [31merror[39m: Error in moveToCart: Transaction numbers are only allowed on a replica set member or mongos
+2025-09-16T07:31:02.577Z [31merror[39m: Error in moveToCart: Transaction numbers are only allowed on a replica set member or mongos
+2025-09-19T09:36:45.601Z [32minfo[39m: login api hits
+2025-09-20T12:47:41.391Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-20T12:47:41.414Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-20T12:47:41.435Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-20T12:47:41.469Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-20T12:48:17.563Z [32minfo[39m: login api hits
+2025-09-30T08:04:23.714Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:04:23.739Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:04:23.752Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:04:23.762Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:04:34.637Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:04:34.660Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:04:34.679Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:04:34.698Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:04:42.513Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:04:42.532Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:04:42.550Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:04:42.568Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:05:02.786Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:05:02.801Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:05:02.812Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:05:02.824Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:05:58.943Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:05:58.967Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:05:58.985Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:05:59.014Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:06:56.355Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:06:56.365Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:06:56.374Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:06:56.384Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:08:18.173Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:08:18.185Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:08:18.194Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:08:18.202Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:08:54.008Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:08:54.017Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:08:54.030Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:08:54.044Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:09:08.109Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:09:08.120Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:09:08.132Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T08:09:08.142Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T09:08:49.768Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T09:08:49.779Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T09:08:49.789Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T09:08:49.797Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T09:09:02.591Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T09:09:02.612Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T09:09:02.628Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T09:09:02.643Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T09:14:07.038Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T09:14:07.047Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T09:14:07.057Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T09:14:07.065Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T09:14:26.383Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T09:14:26.393Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T09:14:26.407Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T09:14:26.414Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T09:18:25.377Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T09:18:25.388Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T09:18:25.400Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T09:18:25.410Z [31merror[39m: error at authorize user is  invalid signature
+2025-09-30T09:25:11.059Z [32minfo[39m: login api hits
+2025-09-30T09:26:26.155Z [31merror[39m: error at authorize user is  jwt expired
+2025-09-30T09:26:26.190Z [31merror[39m: error at authorize user is  jwt expired
+2025-09-30T09:26:45.491Z [32minfo[39m: login api hits
+2025-09-30T09:27:16.597Z [31merror[39m: error at authorize user is  jwt expired
+2025-09-30T09:27:16.650Z [31merror[39m: error at authorize user is  jwt expired
+2025-09-30T09:27:16.682Z [31merror[39m: error at authorize user is  jwt expired
+2025-09-30T09:27:16.713Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:13:45.953Z [31merror[39m: error at authorize user is  invalid signature
+2025-10-08T10:13:45.978Z [31merror[39m: error at authorize user is  invalid signature
+2025-10-08T10:13:45.991Z [31merror[39m: error at authorize user is  invalid signature
+2025-10-08T10:13:46.000Z [31merror[39m: error at authorize user is  invalid signature
+2025-10-08T10:13:58.261Z [32minfo[39m: login api hits
+2025-10-08T10:14:53.806Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:14:53.816Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:15:06.096Z [32minfo[39m: login api hits
+2025-10-08T10:15:41.126Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:15:41.136Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:15:52.999Z [32minfo[39m: login api hits
+2025-10-08T10:16:35.852Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:16:35.861Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:18:01.437Z [32minfo[39m: login api hits
+2025-10-08T10:19:11.669Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:19:11.678Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:19:24.978Z [32minfo[39m: login api hits
+2025-10-08T10:22:50.192Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:22:50.207Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:23:03.726Z [32minfo[39m: login api hits
+2025-10-08T10:23:17.687Z [32minfo[39m: login api hits
+2025-10-08T10:24:58.726Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:24:58.730Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:25:09.579Z [32minfo[39m: login api hits
+2025-10-08T10:25:56.545Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:25:56.554Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:26:05.377Z [32minfo[39m: login api hits
+2025-10-08T10:27:10.501Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:27:10.504Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:27:18.680Z [32minfo[39m: login api hits
+2025-10-08T10:28:22.129Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:28:22.132Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:28:47.580Z [32minfo[39m: login api hits
+2025-10-08T10:29:17.211Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:29:17.216Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:30:03.203Z [32minfo[39m: login api hits
+2025-10-08T10:30:33.069Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:30:33.072Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:31:26.281Z [32minfo[39m: login api hits
+2025-10-08T10:31:56.382Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:31:56.388Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:32:25.041Z [32minfo[39m: login api hits
+2025-10-08T10:32:55.129Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:32:55.133Z [31merror[39m: error at authorize user is  jwt expired
+2025-10-08T10:33:36.793Z [32minfo[39m: login api hits
+2025-10-08T10:50:37.728Z [31merror[39m: Error at adding items in cart Cart validation failed: menu: Path `menu` is required.
+2025-10-08T10:51:08.158Z [31merror[39m: Error at adding items in cart Cart validation failed: menu: Path `menu` is required.

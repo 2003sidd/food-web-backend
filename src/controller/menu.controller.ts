@@ -7,14 +7,19 @@ import { IMenuItem } from "../interface/MenuInterface";
 import logger from "../utility/wingstonLogger";
 import menuRoute from "../route/menuRoute";
 import RestaurantModel from "../models/resturant";
+import cartModel from "../models/cart";
+import WishlistModel from "../models/wishlist.modal";
+import handleUploadService from "../services/multerService";
 
 const addMenu = async (request: Request, response: Response) => {
     try {
-        const { name, image, description, category,vegMeal, price, restaurant_id } = request.body;
+        const { name, description, category, vegMeal, price, restaurant_id } = request.body;
 
-        // if (!checkInValidStringField(image)) {
-        //     return sendResponse(response, 400, "Image is required field", null)
-        // }
+        if (!request.file) {
+            return sendResponse(response, 400, "Image is not present", null)
+        }
+
+        const image = handleUploadService(request.file)
 
         if (!checkInValidStringField(name)) {
             return sendResponse(response, 400, "name is required field", null)
@@ -24,21 +29,21 @@ const addMenu = async (request: Request, response: Response) => {
             return sendResponse(response, 400, "description is required field", null)
         }
 
-        // if (!checkValidMongoseId(category)) {
-        //     return sendResponse(response, 400, "category id is missing or invalid", null)
-        // }
+        if (!checkValidMongoseId(category)) {
+            return sendResponse(response, 400, "category id is missing or invalid", null)
+        }
 
-        // if (!checkValidMongoseId(category)) {
-        //     return sendResponse(response, 400, "category id is missing or invalid", null)
-        // }
-        // if (checkValidMongoseId(restaurant_id)) {
-        //     return sendResponse(response, 400, "resturant id is missing or invalid", null)
-        // }
+        if (checkValidMongoseId(restaurant_id)) {
+            return sendResponse(response, 400, "resturant id is missing or invalid", null)
+        }
 
         if (!checkInValidNumberField(price)) {
             return sendResponse(response, 400, "price should be number and greater than zero", null)
         }
+        if (!vegMeal) {
+            return sendResponse(response, 400, "Please specify the menu is veg or non-veg", null)
 
+        }
         // if (!Array.isArray(specifications)) {
         //     return sendResponse(response, 400, "Specifications should be an array", null);
         // }
@@ -107,52 +112,106 @@ const markUnavailable = async (request: Request<{ id: Types.ObjectId }, {}, IMen
 
 }
 
-const getAllMenu = async (req:Request,res:Response)=>{
+const getAllMenu = async (req: Request, res: Response) => {
     try {
-        const data = await MenuModel.find();
+        const userId = req.user.id;
 
-        if(data )
-            return sendResponse(res,200,"Menu found",data);
-        
-        return sendResponse(res,200,"Menu not found",null);
+        const data = await MenuModel.find();
+        if (!data)
+            return sendResponse(res, 200, "Menu not found", null);
+
+
+        // Get user's cart and wishlist item IDs
+        const cartItems = await cartModel.find({ userId });
+
+        const wishlistItems = await WishlistModel.find({ userId });
+
+        const cartProductIds = cartItems.map(item => item.menu.toString());
+        const wishlistProductIds = wishlistItems.map(item => item.menuId.toString());
+
+        // Add flags to each d
+        const productsWithFlags = data.map(product => ({
+            ...product.toObject(),
+            inCart: cartProductIds.includes(product._id.toString()),
+            inWishlist: wishlistProductIds.includes(product._id.toString())
+        }));
+
+
+        return sendResponse(res, 200, "Menu found", productsWithFlags);
+
     } catch (error) {
-         logger.error("Error at getting all menu item", error)
+        logger.error("Error at getting all menu item", error)
         throwError(res, 500, "Internal server error", null)
     }
 }
 
-const getMenuByResturant  = async (req:Request,res:Response) =>{
+const getMenuByResturant = async (req: Request, res: Response) => {
     try {
         // resturant id
         const id = req.params.id;
+        const userId = req.user._id;
 
-        const data = await MenuModel.find({restaurant_id:id});
 
-        if(data)
-            return sendResponse(res,200,"Get all menu by resturant",data);
-        
-        return sendResponse(res,200,"Menu not found by resturant",null);
+
+        const data = await MenuModel.find({ restaurant_id: id });
+        if (!data)
+            return sendResponse(res, 200, "Menu not found", null);
+
+
+        // Get user's cart and wishlist item IDs
+        const cartItems = await cartModel.find({ userId });
+
+        const wishlistItems = await WishlistModel.find({ userId });
+
+        const cartProductIds = cartItems.map(item => item.menu.toString());
+        const wishlistProductIds = wishlistItems.map(item => item.menuId.toString());
+
+        // Add flags to each d
+        const productsWithFlags = data.map(product => ({
+            ...product.toObject(),
+            inCart: cartProductIds.includes(product._id.toString()),
+            inWishlist: wishlistProductIds.includes(product._id.toString())
+        }));
+
+        return sendResponse(res, 200, "Get all menu by resturant", productsWithFlags);
     } catch (error) {
-         logger.error("Error at getting all menu by resturant item", error)
+        logger.error("Error at getting all menu by resturant item", error)
         throwError(res, 500, "Internal server error", null)
     }
 }
 
-const getMenuByCategory  = async (req:Request,res:Response) =>{
+const getMenuByCategory = async (req: Request, res: Response) => {
     try {
         // category id
         const id = req.params.id;
+        const userId = req.user._id;
 
-        const data = await MenuModel.find({category:id});
 
-        console.log("data is",data)
+        const data = await MenuModel.find({ category: id });
+        if (!data)
+            return sendResponse(res, 200, "Menu not found", null);
 
-        if(data)
-            return sendResponse(res,200,"Get all menu by resturant",data);
-        
-        return sendResponse(res,200,"Menu not found by resturant",null);
+
+        // Get user's cart and wishlist item IDs
+        const cartItems = await cartModel.find({ userId });
+
+        const wishlistItems = await WishlistModel.find({ userId });
+
+
+        const cartProductIds = cartItems.map(item => item.menu.toString());
+        const wishlistProductIds = wishlistItems.map(item => item.menuId.toString());
+
+        // Add flags to each d
+        const productsWithFlags = data.map(product => ({
+            ...product.toObject(),
+            inCart: cartProductIds.includes(product._id.toString()),
+            inWishlist: wishlistProductIds.includes(product._id.toString())
+        }));
+
+        return sendResponse(res, 200, "Get all menu by resturant", productsWithFlags);
+
     } catch (error) {
-         logger.error("Error at getting all menu by resturant item", error)
+        logger.error("Error at getting all menu by resturant item", error)
         throwError(res, 500, "Internal server error", null)
     }
 }
